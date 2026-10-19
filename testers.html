@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sound Stickers: beta tester guide</title>
+<meta name="description" content="How to install the Sound Stickers beta with TestFlight, find it in Messages, what to try, and how to send feedback.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Help test Sound Stickers">
+<meta property="og:description" content="Install the beta, try five things, and tell us what you find. About 10 minutes.">
+<meta property="og:url" content="https://abdi1717.github.io/soundstickers-site/testers.html">
+<meta property="og:image" content="https://abdi1717.github.io/soundstickers-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+/* Tokens from the Figma DS (ss/*). Badge and icon tiles stay light in dark mode so the #B0260F icons keep their contrast. */
+:root{
+  --bg:#F2F2F7;--card:#FFFFFF;--inset:#F2F2F7;--text:#121214;--text-2:#636366;
+  --accent:#D9341F;--accent-text:#B0260F;--accent-subtle:#FFF1EE;--on-accent:#FFFFFF;
+  --hairline:rgba(0,0,0,.12);--lemon:#FFE45C;--link:#D9341F;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#000000;--card:#1C1C1E;--inset:#2C2C2E;--text:#F5F5F7;--text-2:#AEAEB2;
+    --accent-text:#FF8A75;--hairline:rgba(255,255,255,.16);--link:#FF7A66}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:17px/22px -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-.43px}
+img{display:block}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--link);outline-offset:3px;border-radius:6px}
+p{margin:0}
+
+.page{max-width:1200px;margin:0 auto;padding:32px 16px;display:flex;flex-direction:column;gap:24px}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.art{position:relative;width:72px;height:72px;display:grid;place-items:center}
+.art::before{content:"";position:absolute;inset:6px;background:var(--lemon);border:3px solid #fff;border-radius:22px;transform:rotate(8deg);
+  box-shadow:0 .6px 1.2px rgba(0,0,0,.12),0 2.4px 6px rgba(0,0,0,.24)}
+.art span{position:relative;font-size:36px;line-height:1}
+.eyebrow{font-size:12px;line-height:16px;font-weight:600;letter-spacing:0;color:var(--accent-text)}
+h1{margin:0;font:700 34px/41px ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:.3px}
+.lede{color:var(--text-2)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 24px;border-radius:999px;font-weight:600;text-decoration:none;white-space:nowrap}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.secondary{background:var(--accent-subtle);color:#B0260F}
+.btn:hover{filter:brightness(.95)}
+
+/* Cards */
+.card{background:var(--card);border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.copy{display:flex;flex-direction:column;gap:12px;align-items:flex-start;min-width:0}
+h2{margin:0;display:flex;align-items:center;gap:12px;font-size:22px;line-height:28px;font-weight:700;letter-spacing:-.26px}
+.badge{flex:none;width:32px;height:32px;border-radius:50%;background:var(--accent-subtle);color:#B0260F;display:grid;place-items:center;font-size:17px;font-weight:600}
+.callout{font-size:16px;line-height:21px;letter-spacing:-.31px;color:var(--text-2)}
+.foot{font-size:13px;line-height:18px;letter-spacing:-.08px;color:var(--text-2)}
+
+ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;counter-reset:n}
+ol.steps li{display:flex;gap:8px;counter-increment:n}
+ol.steps li::before{content:counter(n) ".";color:var(--accent-text)}
+ol.steps a,.sub a,footer a{overflow-wrap:anywhere}
+
+.shot{border:1px solid var(--hairline);border-radius:28px;overflow:hidden;background:#fff;flex:none}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot.lg{width:150px;height:326px}
+.shot.md{border-radius:16px}
+
+.shots{list-style:none;margin:0;padding:0;display:flex;gap:12px;width:100%}
+.shots li{flex:1 1 0;max-width:98px;display:flex;flex-direction:column;gap:8px}
+.shots .shot{width:100%;aspect-ratio:98/213}
+.shots p{text-align:center}
+
+.tries{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.try{background:var(--inset);border-radius:16px;padding:12px;display:flex;gap:12px;align-items:flex-start}
+.try .shot{width:84px;height:183px}
+.try .t-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.try h3,.way h3{margin:0;font-size:17px;line-height:22px;font-weight:600}
+.sub{font-size:15px;line-height:20px;letter-spacing:-.23px;color:var(--text-2)}
+
+.ways{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;width:100%}
+.way{background:var(--inset);border-radius:16px;padding:12px;display:flex;gap:12px;align-items:flex-start}
+.tile{flex:none;width:36px;height:36px;border-radius:8px;background:var(--accent-subtle);display:grid;place-items:center}
+.way .w-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+
+ul.limits{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+ul.limits li{display:flex;gap:8px;align-items:flex-start}
+.check{flex:none;width:24px;height:24px;border-radius:6px}
+@media (prefers-color-scheme:dark){.check{background:var(--accent-subtle)}}
+
+footer{text-align:center;display:flex;flex-direction:column;gap:6px}
+
+/* Desktop: 1200 frame */
+@media (min-width:760px){
+  .page{padding:64px;gap:40px}
+  .art{width:96px;height:96px}
+  .art::before{inset:8px;border-width:4px;border-radius:28px;box-shadow:0 .8px 1.6px rgba(0,0,0,.12),0 3.2px 8px rgba(0,0,0,.24)}
+  .art span{font-size:48px}
+  h1{font-size:44px;line-height:52px;letter-spacing:.2px}
+  .card{padding:40px;gap:40px}
+  .card.row{flex-direction:row;align-items:flex-start}
+  .card.row .copy{flex:1}
+  h2{font-size:28px;line-height:34px;letter-spacing:.38px}
+  .shot.lg{width:220px;height:478px}
+  .shots{width:auto}
+  .shots li{flex:none;width:220px;max-width:none}
+  .shots .shot{border-radius:28px;aspect-ratio:auto;height:478px}
+  .tries{flex-direction:row;flex-wrap:wrap}
+  .try{flex-direction:column;width:188px}
+  .try .shot{width:164px;height:357px;border-radius:28px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+<header class="hero" aria-labelledby="title">
+  <div class="art" aria-hidden="true"><span>📯</span></div>
+  <p class="eyebrow">BETA · VERSION 1.0 (3)</p>
+  <h1 id="title">Help test Sound Stickers</h1>
+  <p class="lede">Stickers you can hear, right in Messages. Here’s how to install the beta, what to try, and how to tell us what you find. It takes about 10 minutes.</p>
+  <a class="btn primary" href="https://testflight.apple.com/join/r7hY3KT8">Get the beta in TestFlight</a>
+</header>
+
+<section class="card row" aria-labelledby="s1">
+  <div class="copy">
+    <h2 id="s1"><span class="badge" aria-hidden="true">1</span>Install the beta</h2>
+    <ol class="steps">
+      <li><span>Get <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a> from the App Store. It’s free and made by Apple.</span></li>
+      <li><span>On your iPhone, tap the invite link: <a href="https://testflight.apple.com/join/r7hY3KT8">testflight.apple.com/join/r7hY3KT8</a></span></li>
+      <li><span>Tap Accept, then Install. Open Sound Stickers once to finish setup.</span></li>
+    </ol>
+    <a class="btn secondary" href="https://testflight.apple.com/join/r7hY3KT8">Open the invite link</a>
+  </div>
+  <div class="shot lg"><img src="assets/testers/first-launch.jpg" width="440" height="957" loading="lazy" alt="The app's first screen: an air horn sticker with the title Stickers you can hear and a Get started button."></div>
+</section>
+
+<section class="card" aria-labelledby="s2">
+  <div class="copy">
+    <h2 id="s2"><span class="badge" aria-hidden="true">2</span>Find it in Messages</h2>
+    <p class="callout">Sound Stickers lives inside Messages, in the + menu.</p>
+    <p class="foot">Tip: touch and hold Sound Stickers and drag it to the top so it’s always one tap away.</p>
+  </div>
+  <ol class="shots">
+    <li><div class="shot md"><img src="assets/testers/find-1.jpg" width="440" height="957" loading="lazy" alt="An empty Messages conversation."></div><p class="foot">1. Open any chat</p></li>
+    <li><div class="shot md"><img src="assets/testers/find-2.jpg" width="440" height="957" loading="lazy" alt="The + menu open, listing Camera, Photos, Stickers and more."></div><p class="foot">2. Tap +</p></li>
+    <li><div class="shot md"><img src="assets/testers/find-3.jpg" width="440" height="957" loading="lazy" alt="The + menu scrolled down, with Sound Stickers at the bottom."></div><p class="foot">3. Scroll down, tap Sound Stickers</p></li>
+  </ol>
+</section>
+
+<section class="card" aria-labelledby="s3">
+  <div class="copy">
+    <h2 id="s3"><span class="badge" aria-hidden="true">3</span>What to try</h2>
+    <p class="callout">Five quick things. Each takes under two minutes.</p>
+  </div>
+  <ol class="tries">
+    <li class="try"><div class="shot md"><img src="assets/testers/try-1.jpg" width="440" height="957" loading="lazy" alt="A Tomato Throw sticker open in the app with a waveform, its caption and a Play button."></div>
+      <div class="t-copy"><p class="eyebrow">Try 1</p><h3>Play a starter sticker</h3><p class="sub">Open a starter pack and tap a sticker to hear it.</p></div></li>
+    <li class="try"><div class="shot md"><img src="assets/testers/try-2.jpg" width="440" height="957" loading="lazy" alt="The FX step with Splat and Echo stacked on a tomato sticker."></div>
+      <div class="t-copy"><p class="eyebrow">Try 2</p><h3>Make your own</h3><p class="sub">Record a sound, pick art, add Splat + Echo, then save.</p></div></li>
+    <li class="try"><div class="shot md"><img src="assets/testers/try-3.jpg" width="440" height="957" loading="lazy" alt="An air horn sound sticker sent in a Messages chat, with the Sound Stickers drawer open below."></div>
+      <div class="t-copy"><p class="eyebrow">Try 3</p><h3>Send one in Messages</h3><p class="sub">Open a chat, tap + › Sound Stickers, tap a sticker, send.</p></div></li>
+    <li class="try"><div class="shot md"><img src="assets/testers/try-4.jpg" width="440" height="957" loading="lazy" alt="A tomato sticker placed in the message field with the tip Send with Echo: hold Send, tap Screen, swipe to Echo."></div>
+      <div class="t-copy"><p class="eyebrow">Try 4</p><h3>Send with a Screen effect</h3><p class="sub">Pick the 🍅 tomato and send it with the Echo screen effect.</p></div></li>
+    <li class="try"><div class="shot md"><img src="assets/testers/try-5.jpg" width="440" height="957" loading="lazy" alt="The iCloud and Privacy screen saying Everything is stored on this iPhone, with an Export My Stickers button."></div>
+      <div class="t-copy"><p class="eyebrow">Try 5</p><h3>Check where it’s stored</h3><p class="sub">Settings › iCloud &amp; Privacy should say everything is on this iPhone.</p></div></li>
+  </ol>
+</section>
+
+<section class="card row" aria-labelledby="s4">
+  <div class="copy">
+    <h2 id="s4"><span class="badge" aria-hidden="true">4</span>Send feedback</h2>
+    <p class="callout">Anything odd, confusing or great: we want to hear it.</p>
+    <ul class="ways">
+      <li class="way"><span class="tile"><img src="assets/testers/envelope.svg" width="24" height="24" alt=""></span>
+        <div class="w-copy"><h3>In the app</h3><p class="sub">Settings › Help › Send Feedback (coming in build 3). It opens Mail with your note and (if you like) your iPhone model, iOS and app version. Until then, email <a href="mailto:abdimohamed1717+soundstickers@gmail.com?subject=Sound%20Stickers%20beta%20feedback">abdimohamed1717+soundstickers@gmail.com</a>.</p></div></li>
+      <li class="way"><span class="tile"><img src="assets/testers/camera.svg" width="24" height="24" alt=""></span>
+        <div class="w-copy"><h3>With a screenshot</h3><p class="sub">Take a screenshot, tap the thumbnail, then tap Share Beta Feedback. TestFlight sends it to us.</p></div></li>
+      <li class="way"><span class="tile"><img src="assets/testers/triangle.svg" width="24" height="24" alt=""></span>
+        <div class="w-copy"><h3>If it crashes</h3><p class="sub">TestFlight asks if you want to send a crash report. Say yes, and add a line about what you were doing.</p></div></li>
+    </ul>
+  </div>
+  <div class="shot lg"><img src="assets/testers/settings.jpg" width="440" height="957" loading="lazy" alt="The app's Settings screen with Account, Find Us in Messages, iCloud and Privacy, Haptics and Sound, and a Help section."></div>
+</section>
+
+<section class="card row" aria-labelledby="s5">
+  <div class="copy">
+    <h2 id="s5"><span class="badge" aria-hidden="true">5</span>Good to know</h2>
+    <ul class="limits">
+      <li><img class="check" src="assets/testers/checkmark.svg" width="24" height="24" alt=""><span>iPhone only for now (no iPad or Mac).</span></li>
+      <li><img class="check" src="assets/testers/checkmark.svg" width="24" height="24" alt=""><span>Needs iOS 18 or later.</span></li>
+      <li><img class="check" src="assets/testers/checkmark.svg" width="24" height="24" alt=""><span>The people you send to don’t need the app. They get a video with sound.</span></li>
+    </ul>
+  </div>
+  <div class="shot lg"><img src="assets/testers/friends-see.jpg" width="440" height="956" loading="lazy" alt="Right in Messages: tap +, then Sound Stickers. Friends hear it, even without the app. An iPhone shows a sent air horn sticker."></div>
+</section>
+
+<footer>
+  <p class="foot">Thanks for testing! Questions? <a href="mailto:abdimohamed1717+soundstickers@gmail.com?subject=Sound%20Stickers%20beta">abdimohamed1717+soundstickers@gmail.com</a></p>
+  <p class="foot"><a href="./">Sound Stickers</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a></p>
+</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Icon/exclamationmark.triangle">
+<path id="Vector" d="M12 4L21 19.5H3L12 4Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#B0260F"/>
+<path id="Vector_2" d="M12 10V14.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#B0260F"/>
+<g id="Vector_3">
+<use xlink:href="#stroke0_0_36" fill="#121214"/>
+<mask id="stroke1_0_36" fill="white">
+<use xlink:href="#stroke0_0_36"/>
+</mask>
+<path d="M13.1 17C13.1 17.6075 12.6075 18.1 12 18.1C11.3925 18.1 10.9 17.6075 10.9 17C10.9 16.3925 11.3925 15.9 12 15.9C12.6075 15.9 13.1 16.3925 13.1 17Z" stroke-width="2" stroke="#B0260F" mask="url(#stroke1_0_36)"/>
+</g>
+</g>
+<defs>
+<path id="stroke0_0_36" d="M12 18.1C12.6075 18.1 13.1 17.6075 13.1 17C13.1 16.3925 12.6075 15.9 12 15.9C11.3925 15.9 10.9 16.3925 10.9 17C10.9 17.6075 11.3925 18.1 12 18.1Z"/>
+</defs>
+</svg>
