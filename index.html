@@ -1,4 +1,272 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sound Stickers</title><link rel="stylesheet" href="style.css"></head><body>
-<h1>Sound Stickers</h1><p>Stickers you can hear, sent in iMessage. Record or import a sound, give it art and an effect, and send it from the Messages drawer.</p>
-<p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="copyright.html">Copyright &amp; Acceptable Use</a> · <a href="support.html">Support</a></p>
-<p class="muted">© 2026 Abdinajib Hussein Mohamed</p></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sound Stickers: stickers you can hear in iMessage</title>
+<meta name="description" content="Record or import a sound, give it emoji or photo art, add Splat or Echo, and send it from Messages. Free, no ads, no account needed. Your stickers stay on your iPhone.">
+<meta name="theme-color" content="#FAF6EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://abdi1717.github.io/soundstickers-site/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sound Stickers">
+<meta property="og:title" content="Sound Stickers: stickers you can hear">
+<meta property="og:description" content="Turn any sound into a sticker your friends can hear in iMessage. Add Splat or Echo. Free, no ads, no account needed.">
+<meta property="og:url" content="https://abdi1717.github.io/soundstickers-site/">
+<meta property="og:image" content="https://abdi1717.github.io/soundstickers-site/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sound Stickers app icon next to an iPhone showing a tomato sound sticker in a Messages chat, with the words Stickers you can hear.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sound Stickers: stickers you can hear">
+<meta name="twitter:description" content="Turn any sound into a sticker your friends can hear in iMessage. Free, no ads, no account needed.">
+<meta name="twitter:image" content="https://abdi1717.github.io/soundstickers-site/assets/og.png">
+<meta name="twitter:image:alt" content="Sound Stickers app icon next to an iPhone showing a tomato sound sticker in a Messages chat.">
+<style>
+:root{
+  --bg:#FAF6EF;--surface:#FFFFFF;--ink:#141210;--ink-2:#55504A;--line:rgba(20,18,16,.10);
+  --coral:#FF4F3A;   /* graphics only */
+  --accent:#D9341F;  /* text-bearing: 4.7:1 on white */
+  --accent-ink:#FFFFFF;--tint:#FFE9E4;--shadow:0 18px 50px rgba(60,20,10,.16);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#141210;--surface:#1F1C19;--ink:#F6F2EC;--ink-2:#B9B1A8;--line:rgba(255,255,255,.12);
+    --accent:#FF7A66;--accent-ink:#1A0F0C;--tint:#2E1915;--shadow:0 18px 50px rgba(0,0,0,.5)}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
+h1,h2,h3,.brand{font-family:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;letter-spacing:-.01em}
+a{color:var(--accent)}
+img,video{display:block;max-width:100%;height:auto}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--surface);padding:8px 12px;border-radius:8px;z-index:9}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+header.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{white-space:nowrap;display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:9px}
+header.top nav a{color:var(--ink-2);text-decoration:none;font-weight:600;font-size:15px;margin-left:18px}
+header.top nav a:hover{color:var(--accent)}
+
+.hero{display:grid;gap:36px;align-items:center;padding:28px 0 56px}
+.hero h1{font-size:clamp(44px,11vw,76px);line-height:1.02;margin:0 0 18px;font-weight:800}
+.hero h1 span{color:var(--accent)}
+.lede{font-size:clamp(18px,2.4vw,21px);color:var(--ink-2);max-width:34ch;margin:0 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);border-radius:14px;padding:12px 18px;font-weight:700;font-size:16px}
+.badge svg{width:20px;height:20px;fill:currentColor}
+.btn2{color:var(--accent);font-weight:700;text-decoration:none;padding:12px 6px}
+.btn2:hover{text-decoration:underline}
+.facts{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.facts li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:14px;font-weight:600;color:var(--ink-2)}
+
+.stage{position:relative;justify-self:center;width:min(300px,78vw)}
+.stage::before{content:"";position:absolute;inset:-14% -22%;background:radial-gradient(closest-side,var(--coral),transparent 72%);opacity:.32;z-index:0}
+.phone{position:relative;z-index:1;border-radius:44px;padding:9px;background:#1A1817;box-shadow:var(--shadow)}
+.phone video,.phone img{border-radius:36px;width:100%;aspect-ratio:540/1174;background:#fff;object-fit:cover}
+.stage .chip{position:absolute;z-index:2;background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;box-shadow:0 8px 24px rgba(0,0,0,.14);white-space:nowrap}
+.chip.a{left:-14%;top:20%}.chip.b{right:-12%;top:52%}
+.chip i{font-style:normal;color:var(--accent)}
+
+section{padding:56px 0}
+.eyebrow{color:var(--accent);font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px}
+h2{font-size:clamp(30px,6vw,44px);line-height:1.08;margin:0 0 14px;font-weight:800}
+.sub{color:var(--ink-2);max-width:56ch;margin:0}
+
+.features{display:grid;gap:22px;margin-top:34px}
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:26px 24px 0;overflow:hidden;display:flex;flex-direction:column}
+.feature h3{font-size:23px;margin:0 0 6px;font-weight:800}
+.feature p{margin:0 0 20px;color:var(--ink-2)}
+.feature .shot{margin:auto auto 0;width:min(240px,80%);border-radius:30px 30px 0 0;border:8px solid #1A1817;border-bottom:0;aspect-ratio:420/560;object-fit:cover;object-position:top}
+
+.effect{background:var(--tint);border-radius:32px;padding:34px 24px;display:grid;gap:26px;align-items:center}
+.steps{list-style:none;counter-reset:s;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:15px;display:grid;place-items:center;margin-top:1px}
+kbd{font:inherit;font-weight:700;background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:1px 7px}
+
+.find{display:grid;gap:18px;margin-top:30px;grid-template-columns:repeat(2,1fr)}
+.find figure{margin:0}
+.find img{border-radius:20px;border:1px solid var(--line);background:#fff;aspect-ratio:420/585}
+.find figcaption{font-size:15px;margin-top:10px;color:var(--ink-2)}
+.find figcaption b{color:var(--ink);display:block;font-size:16px}
+.note{margin-top:22px;font-size:15px;color:var(--ink-2)}
+
+.packs{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.pack{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:10px 18px 10px 10px;font-weight:700}
+.pack img{width:56px;height:56px}
+.pack small{display:block;font-weight:500;color:var(--ink-2);font-size:14px}
+
+.privacy{display:grid;gap:24px}
+.checks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks svg{flex:none;width:24px;height:24px;margin-top:1px}
+.checks circle{fill:var(--coral)}
+
+.closing{text-align:center;padding:72px 0}
+.closing img{width:84px;height:84px;border-radius:20px;margin:0 auto 18px}
+.closing .cta{justify-content:center;margin-top:22px}
+
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:15px;color:var(--ink-2)}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:10px}
+
+@media (min-width:760px){
+  .hero{grid-template-columns:1.15fr .85fr;padding:48px 0 80px}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .effect{grid-template-columns:1.2fr .8fr;padding:48px}
+  .find{grid-template-columns:repeat(4,1fr)}
+  .privacy{grid-template-columns:1fr 1fr;align-items:center}
+}
+@media (max-width:480px){header.top nav a:first-child{display:none}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon-192.png" alt="" width="36" height="36">Sound Stickers</a>
+  <nav aria-label="Primary"><a href="#find">Find it in Messages</a><a href="support.html">Support</a></nav>
+</header>
+
+<main id="main">
+<section class="hero" aria-labelledby="hero-title" style="padding-top:28px">
+  <div>
+    <h1 id="hero-title">Stickers you <span>can&nbsp;hear.</span></h1>
+    <p class="lede">Record or import a sound, give it emoji or photo art, add Splat or Echo, and send it right from Messages. Friends hear it even if they don't have the app.</p>
+    <div class="cta">
+      <!-- When the App Store link is live, replace this badge with: <a class="badge" href="APP_STORE_URL">Download on the App Store</a> -->
+      <span class="badge" role="note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.8 1.2 1.8 2.6 3.1 2.5 1.3-.1 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-1-2.4-4.2zM14 5.3c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>Coming soon to the App Store</span>
+      <a class="btn2" href="#how">See how it works</a>
+    </div>
+    <ul class="facts" aria-label="At a glance">
+      <li>Free</li><li>iPhone · iOS 18+</li><li>No ads</li><li>No account needed</li><li>Stays on your iPhone</li>
+    </ul>
+  </div>
+  <div class="stage">
+    <div class="phone">
+      <video id="demo" autoplay muted loop playsinline preload="metadata" poster="assets/demo-poster.jpg" width="540" height="1174"
+        aria-label="Demo with no sound: in a Messages chat, the Sound Stickers drawer is open. A tomato sticker is placed in the message field with a tip to hold Send and pick Echo, then the sticker plays with a splat and echoing copies.">
+        <source src="assets/demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <span class="chip a" aria-hidden="true"><i>●</i> Splat + Echo</span>
+    <span class="chip b" aria-hidden="true">🔊 Tap to hear</span>
+  </div>
+</section>
+
+<section id="how" aria-labelledby="how-title">
+  <p class="eyebrow">How it works</p>
+  <h2 id="how-title">Your sounds, as stickers</h2>
+  <p class="sub">Your friend's laugh, a perfectly timed air horn, the splat of a tomato. Make it once and it's in your Messages drawer for good.</p>
+  <div class="features">
+    <article class="feature">
+      <h3>Make one in seconds</h3>
+      <p>Hold to record up to 10 seconds, or pull the sound out of a video in Photos or a file in Files. Trim to the exact moment.</p>
+      <img class="shot" src="assets/shot-create.jpg" width="420" height="913" loading="lazy" alt="The New Sound Sticker screen with a big Record button and options to bring a sound in from a Photos video or from Files.">
+    </article>
+    <article class="feature">
+      <h3>Effects everyone sees</h3>
+      <p>Splat, Echo, Slam, Shake, Confetti, Hearts and more. Stack two, like Splat + Echo. The effect is part of the sticker, so it plays for everyone.</p>
+      <img class="shot" src="assets/shot-fx.jpg" width="420" height="913" loading="lazy" alt="The FX step with Splat and Echo selected on a tomato sticker, an iMessage effect set to Echo, and Echo the sound turned on.">
+    </article>
+    <article class="feature">
+      <h3>Right in Messages</h3>
+      <p>Open any chat, tap +, then Sound Stickers. Your favorites, recents and packs are all there. Tap one to place it, then send.</p>
+      <img class="shot" style="object-position:bottom" src="assets/shot-drawer.jpg" width="420" height="913" loading="lazy" alt="The Sound Stickers drawer open under a Messages chat, showing Favorites, Recents and Packs tabs and a grid of stickers.">
+    </article>
+    <article class="feature">
+      <h3>Everyone hears it</h3>
+      <p>Friends without the app get a short video of the art and the sound. They tap it and hear it. Captions help when phones are on silent.</p>
+      <img class="shot" src="assets/shot-sent.jpg" width="420" height="913" loading="lazy" alt="A sent air horn sound sticker in a Messages chat, marked Delivered, with a speaker button and a waveform.">
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="fx-title">
+  <div class="effect">
+    <div>
+      <p class="eyebrow">Send with Effect</p>
+      <h2 id="fx-title">Throw a tomato with Echo</h2>
+      <p class="sub">Pair your sticker with an iMessage screen effect. Echo fills their screen with tomatoes, and they tap to hear the splat.</p>
+      <ol class="steps">
+        <li><span>Tap a sticker in the drawer to place it.</span></li>
+        <li><span>Touch and hold the blue Send arrow <kbd aria-label="Send">↑</kbd>.</span></li>
+        <li><span>Tap <b>Screen</b>, swipe to <b>Echo</b>, then send.</span></li>
+      </ol>
+    </div>
+    <div class="phone" style="width:min(260px,70vw);justify-self:center"><img src="assets/shot-echo.jpg" width="420" height="913" loading="lazy" alt="A tomato sound sticker placed in the Messages field, with a tip above Send: Send with Echo. Hold Send, tap Screen, swipe to Echo."></div>
+  </div>
+</section>
+
+<section id="find" aria-labelledby="find-title">
+  <p class="eyebrow">Getting started</p>
+  <h2 id="find-title">How to find it in Messages</h2>
+  <p class="sub">On iOS 26, new iMessage apps are added at the bottom of the + list. Move Sound Stickers to the top once and it's always one tap away.</p>
+  <div class="find">
+    <figure><img src="assets/find-1.jpg" width="420" height="585" loading="lazy" alt="A Messages chat with the + menu open, listing Camera, Photos, Stickers and other apps."><figcaption><b>1. Tap +</b>Open any chat and tap + next to the text field.</figcaption></figure>
+    <figure><img src="assets/find-2.jpg" width="420" height="585" loading="lazy" alt="The + menu scrolled down, with Sound Stickers at the bottom of the list."><figcaption><b>2. Scroll down</b>Sound Stickers is at the bottom of the list.</figcaption></figure>
+    <figure><img src="assets/find-3.jpg" width="420" height="585" loading="lazy" alt="The + menu with Sound Stickers moved to the top, above Camera and Photos."><figcaption><b>3. Drag it to the top</b>Touch and hold Sound Stickers, then drag it up.</figcaption></figure>
+    <figure><img src="assets/find-4.jpg" width="420" height="585" loading="lazy" alt="The Sound Stickers drawer open in the chat, showing a grid of stickers."><figcaption><b>4. Tap and send</b>Your stickers open right under the chat.</figcaption></figure>
+  </div>
+  <p class="note">On iOS 18, tap +, then More, to find Sound Stickers. Stuck? See <a href="support.html">Support</a>.</p>
+</section>
+
+<section aria-labelledby="packs-title">
+  <p class="eyebrow">Free starter packs</p>
+  <h2 id="packs-title">24 sounds to start with</h2>
+  <p class="sub">Air horns, drumrolls, ba-dum-tss, slow claps, confetti pops and a tomato throw. Every bundled sound is original, made for the app.</p>
+  <div class="packs">
+    <div class="pack"><img src="assets/pack-starter-pack.png" width="56" height="56" alt=""><span>Starter Pack<small>8 sounds</small></span></div>
+    <div class="pack"><img src="assets/pack-group-chat-chaos.png" width="56" height="56" alt=""><span>Group Chat Chaos<small>8 sounds</small></span></div>
+    <div class="pack"><img src="assets/pack-party-and-throw.png" width="56" height="56" alt=""><span>Party &amp; Throw<small>8 sounds</small></span></div>
+  </div>
+</section>
+
+<section class="privacy" aria-labelledby="privacy-title">
+  <div>
+    <p class="eyebrow">Private by design</p>
+    <h2 id="privacy-title">Your sounds stay on your iPhone</h2>
+    <p class="sub">There's no Sound Stickers server, so there's nothing to upload your recordings to.</p>
+    <ul class="checks">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>No account needed.</b> Sign in with Apple is optional.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>No ads, no tracking.</b> The app collects no data.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Captions on device.</b> Speech is turned into captions on your iPhone.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Yours to remove.</b> Export your stickers or delete everything from the app.</span></li>
+    </ul>
+    <p class="note">Read the <a href="privacy.html">Privacy Policy</a>. This website has no cookies, analytics or trackers either.</p>
+  </div>
+  <div class="phone" style="width:min(260px,70vw);justify-self:center">
+    <img src="assets/shot-library.jpg" width="420" height="913" loading="lazy" alt="The Sound Stickers library on iPhone, with a search field and the Starter Pack, Group Chat Chaos and Party & Throw packs.">
+  </div>
+</section>
+
+<section class="closing" aria-labelledby="close-title">
+  <img src="assets/icon-192.png" width="84" height="84" alt="">
+  <h2 id="close-title">Stickers are silent.<br>Sound Stickers aren't.</h2>
+  <p class="sub" style="margin:0 auto">Free on iPhone, with iOS 18 or later.</p>
+  <div class="cta"><span class="badge" role="note">Coming soon to the App Store</span></div>
+</section>
+</main>
+
+<footer>
+  <nav aria-label="Legal and help">
+    <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="copyright.html">Copyright &amp; Acceptable Use</a><a href="support.html">Support</a>
+  </nav>
+  <p style="margin:0">© 2026 Abdinajib Hussein Mohamed. iPhone and iMessage are trademarks of Apple Inc.</p>
+</footer>
+</div>
+<script>
+// Respect Reduce Motion: show the poster instead of looping the demo.
+(function(){var v=document.getElementById('demo');if(v&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();v.setAttribute('controls','')}})();
+</script>
+</body>
+</html>
