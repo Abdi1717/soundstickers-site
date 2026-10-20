@@ -54,6 +54,7 @@ h1{margin:0;font:700 34px/41px ui-rounded,"SF Pro Rounded",-apple-system,BlinkMa
 .btn.primary{background:var(--accent);color:var(--on-accent)}
 .btn.secondary{background:var(--accent-subtle);color:#B0260F}
 .btn:hover{filter:brightness(.95)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
 
 /* Cards */
 .card{background:var(--card);border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:16px}
@@ -126,7 +127,10 @@ footer{text-align:center;display:flex;flex-direction:column;gap:6px}
   <p class="eyebrow">BETA · VERSION 1.0 (3)</p>
   <h1 id="title">Help test Sound Stickers</h1>
   <p class="lede">Stickers you can hear, right in Messages. Here’s how to install the beta, what to try, and how to tell us what you find. It takes about 10 minutes.</p>
-  <a class="btn primary" href="https://testflight.apple.com/join/r7hY3KT8">Get the beta in TestFlight</a>
+  <div class="cta-row">
+    <a class="btn primary" href="https://testflight.apple.com/join/r7hY3KT8">Get the beta in TestFlight</a>
+    <a class="btn secondary" href="whats-new.html">🎉 What’s new in build 4</a>
+  </div>
 </header>
 
 <section class="card row" aria-labelledby="s1">

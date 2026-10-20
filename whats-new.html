@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sound Stickers: what’s new in build 4</title>
+<meta name="description" content="What changed in Sound Stickers beta build 4, with screenshots, and three quick things to test.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="What’s new in Sound Stickers build 4">
+<meta property="og:description" content="Plays on silent, three fresh packs and a new empty Library. Three quick things to test.">
+<meta property="og:url" content="https://abdi1717.github.io/soundstickers-site/whats-new.html">
+<meta property="og:image" content="https://abdi1717.github.io/soundstickers-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+/* Same ss/* tokens as testers.html. Stage tints are per-feature backdrops behind the screenshots. */
+:root{
+  --bg:#F2F2F7;--card:#FFFFFF;--inset:#F2F2F7;--text:#121214;--text-2:#636366;
+  --accent:#D9341F;--accent-text:#B0260F;--accent-subtle:#FFF1EE;--on-accent:#FFFFFF;
+  --hairline:rgba(0,0,0,.12);--lemon:#FFE45C;--link:#D9341F;
+  --t-lemon:#FFF6C7;--t-violet:#EEE8FF;--t-orange:#FFE8D6;--t-rose:#FFF1EE;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#000000;--card:#1C1C1E;--inset:#2C2C2E;--text:#F5F5F7;--text-2:#AEAEB2;
+    --accent-text:#FF8A75;--hairline:rgba(255,255,255,.16);--link:#FF7A66;
+    --t-lemon:#3A3410;--t-violet:#2A2440;--t-orange:#3B2614;--t-rose:#3A1A15}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:17px/22px -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-.43px}
+img{display:block}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--link);outline-offset:3px;border-radius:6px}
+p{margin:0}
+
+.page{max-width:1200px;margin:0 auto;padding:32px 16px;display:flex;flex-direction:column;gap:24px}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.art{position:relative;width:72px;height:72px;display:grid;place-items:center;flex:none}
+.art::before{content:"";position:absolute;inset:6px;background:var(--lemon);border:3px solid #fff;border-radius:22px;transform:rotate(8deg);
+  box-shadow:0 .6px 1.2px rgba(0,0,0,.12),0 2.4px 6px rgba(0,0,0,.24)}
+.art span{position:relative;font-size:36px;line-height:1}
+.eyebrow{font-size:12px;line-height:16px;font-weight:600;letter-spacing:0;color:var(--accent-text)}
+h1{margin:0;font:700 34px/41px ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:.3px}
+.lede{color:var(--text-2)}
+
+/* Jump chips */
+.chips{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips a{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;background:var(--card);
+  color:var(--text);text-decoration:none;font-size:15px;font-weight:600;letter-spacing:-.23px;border:1px solid var(--hairline)}
+
+/* Section headings */
+h2{margin:0;display:flex;align-items:center;gap:12px;font-size:22px;line-height:28px;font-weight:700;letter-spacing:-.26px}
+.badge{flex:none;width:32px;height:32px;border-radius:50%;background:var(--accent-subtle);color:#B0260F;display:grid;place-items:center;font-size:17px;font-weight:600}
+.callout{font-size:16px;line-height:21px;letter-spacing:-.31px;color:var(--text-2)}
+.foot{font-size:13px;line-height:18px;letter-spacing:-.08px;color:var(--text-2)}
+.sub{font-size:15px;line-height:20px;letter-spacing:-.23px;color:var(--text-2)}
+h3{margin:0;font-size:20px;line-height:25px;font-weight:700;letter-spacing:-.45px}
+
+/* Feature cards: a tinted stage with the screenshot, then the copy */
+.features{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.feature{background:var(--card);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:16px}
+.stage{position:relative;height:300px;display:flex;justify-content:center;align-items:flex-start;padding-top:28px;overflow:hidden}
+.stage.lemon{background:var(--t-lemon)}.stage.violet{background:var(--t-violet)}.stage.orange{background:var(--t-orange)}.stage.rose{background:var(--t-rose)}
+.phone{width:200px;flex:none;border:1px solid var(--hairline);border-radius:28px;overflow:hidden;background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.08),0 12px 32px rgba(0,0,0,.14)}
+.phone img{width:100%;height:auto}
+.phone.lift{margin-top:-120px}     /* shows the middle of the screen (Store rows) */
+.stage .sticker{position:absolute;top:18px;left:18px;width:56px;height:56px;display:grid;place-items:center}
+.stage .sticker::before{content:"";position:absolute;inset:4px;background:var(--lemon);border:3px solid #fff;border-radius:16px;transform:rotate(-8deg);
+  box-shadow:0 .6px 1.2px rgba(0,0,0,.12),0 2.4px 6px rgba(0,0,0,.24)}
+.stage .sticker span{position:relative;font-size:26px;line-height:1}
+.f-copy{padding:20px;display:flex;flex-direction:column;gap:6px}
+.tag{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;height:22px;padding:0 8px;border-radius:999px;background:var(--accent-subtle);
+  color:#B0260F;font-size:12px;line-height:16px;font-weight:600;letter-spacing:0}
+.fixed{margin-top:6px;display:flex;gap:8px;align-items:flex-start;font-size:15px;line-height:20px;letter-spacing:-.23px}
+.fixed b{flex:none;font-size:12px;line-height:20px;color:var(--accent-text)}
+
+/* Smaller fixes */
+.card{background:var(--card);border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.copy{display:flex;flex-direction:column;gap:12px;align-items:flex-start;min-width:0}
+ul.small{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;width:100%}
+ul.small li{background:var(--inset);border-radius:16px;padding:12px;display:flex;gap:12px;align-items:center}
+.emo{flex:none;width:36px;height:36px;border-radius:8px;background:var(--accent-subtle);display:grid;place-items:center;font-size:20px}
+
+/* How to test */
+ol.how{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.step{background:var(--inset);border-radius:16px;padding:14px;display:flex;gap:14px;align-items:center}
+.step .s-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+.step h3{font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.43px}
+.step .art{width:64px;height:64px}
+.step .art span{font-size:30px}
+.step:nth-child(2) .art::before{transform:rotate(-6deg)}
+
+/* Feedback */
+.ways{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;width:100%}
+.way{background:var(--inset);border-radius:16px;padding:12px;display:flex;gap:12px;align-items:flex-start}
+.tile{flex:none;width:36px;height:36px;border-radius:8px;background:var(--accent-subtle);display:grid;place-items:center}
+.way .w-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+.way h3{font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.43px}
+.shot{border:1px solid var(--hairline);border-radius:28px;overflow:hidden;background:#fff;flex:none;width:150px;align-self:center}
+.shot img{width:100%;height:auto}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 24px;border-radius:999px;font-weight:600;text-decoration:none;white-space:nowrap}
+.btn.secondary{background:var(--accent-subtle);color:#B0260F}
+.btn:hover{filter:brightness(.95)}
+
+footer{text-align:center;display:flex;flex-direction:column;gap:6px}
+footer a{overflow-wrap:anywhere}
+
+/* Desktop: 1200 frame */
+@media (min-width:760px){
+  .page{padding:64px;gap:40px}
+  .art{width:96px;height:96px}
+  .art::before{inset:8px;border-width:4px;border-radius:28px;box-shadow:0 .8px 1.6px rgba(0,0,0,.12),0 3.2px 8px rgba(0,0,0,.24)}
+  .art span{font-size:48px}
+  h1{font-size:44px;line-height:52px;letter-spacing:.2px}
+  h2{font-size:28px;line-height:34px;letter-spacing:.38px}
+  .features{grid-template-columns:1fr 1fr;gap:24px}
+  .stage{height:380px;padding-top:40px}
+  .phone{width:240px}
+  .phone.lift{margin-top:-150px}
+  .f-copy{padding:24px 28px 28px}
+  .card{padding:40px;gap:32px}
+  .card.row{flex-direction:row;align-items:flex-start}
+  .card.row .copy{flex:1}
+  ol.how{flex-direction:row}
+  .step{flex:1;flex-direction:column;align-items:flex-start;padding:20px}
+  .step .art{width:80px;height:80px}
+  .step .art span{font-size:40px}
+  .shot{width:220px;align-self:flex-start}
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+<header class="hero" aria-labelledby="title">
+  <div class="art" aria-hidden="true"><span>🎉</span></div>
+  <p class="eyebrow">BETA · BUILD 4</p>
+  <h1 id="title">What’s new in build 4</h1>
+  <p class="lede">Sounds that play on silent, three fresh packs and a friendlier empty Library. Have a look, then try the three quick tests at the bottom.</p>
+  <ul class="chips" aria-label="Jump to">
+    <li><a href="#silent">🔇 Plays on silent</a></li>
+    <li><a href="#fresh">🎃 3 new packs</a></li>
+    <li><a href="#empty">✨ New Library</a></li>
+    <li><a href="#test">🧪 How to test</a></li>
+  </ul>
+</header>
+
+<ul class="features">
+  <li class="feature" id="silent">
+    <div class="stage lemon"><div class="sticker" aria-hidden="true"><span>🔇</span></div>
+      <div class="phone"><picture><source srcset="assets/whats-new/silent-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/silent-light.jpg" width="440" height="957" loading="lazy" alt="The Library with the air horn demo sticker playing, and the hint Tap it to hear it, even on silent."></picture></div></div>
+    <div class="f-copy">
+      <span class="tag">Sound</span>
+      <h3>Plays even on silent</h3>
+      <p class="sub">Tapping a sticker always plays it, and your music keeps going.</p>
+      <p class="fixed"><b>FIXED</b><span>Taps that sometimes made no sound, especially after the app sat idle for half a minute.</span></p>
+    </div>
+  </li>
+  <li class="feature" id="fresh">
+    <div class="stage violet"><div class="sticker" aria-hidden="true"><span>🎃</span></div>
+      <div class="phone lift"><picture><source srcset="assets/whats-new/fresh-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/fresh-light.jpg" width="440" height="957" loading="lazy" alt="The Store with Spooky Season at the top and a Fresh this week row: Spooky Season, Game Night and This Week's Vibe."></picture></div></div>
+    <div class="f-copy">
+      <span class="tag">Store</span>
+      <h3>Fresh this week: 3 new packs</h3>
+      <p class="sub">Spooky Season, Game Night and This Week’s Vibe Vol. 1. Every sound is made by us.</p>
+    </div>
+  </li>
+  <li class="feature" id="banner">
+    <div class="stage orange"><div class="sticker" aria-hidden="true"><span>👻</span></div>
+      <div class="phone"><picture><source srcset="assets/whats-new/banner-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/banner-light.jpg" width="440" height="957" loading="lazy" alt="The Library with a banner at the top: Spooky season is here, 8 new sounds for Halloween, with Get and close buttons."></picture></div></div>
+    <div class="f-copy">
+      <span class="tag">Library</span>
+      <h3>A seasonal banner</h3>
+      <p class="sub">The new packs show up at the top of your Library. Tap ✕ to hide it.</p>
+    </div>
+  </li>
+  <li class="feature" id="empty">
+    <div class="stage rose"><div class="sticker" aria-hidden="true"><span>✨</span></div>
+      <div class="phone"><picture><source srcset="assets/whats-new/empty-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/empty-light.jpg" width="440" height="957" loading="lazy" alt="The empty Library: an air horn demo sticker, the title Your sounds live here, and three ways to start: Record a sound, Import a video or audio file, Get 3 free packs."></picture></div></div>
+    <div class="f-copy">
+      <span class="tag">Library</span>
+      <h3>A new empty Library</h3>
+      <p class="sub">Tap the demo sticker to hear it, then record, import or get the free packs.</p>
+    </div>
+  </li>
+</ul>
+
+<section class="card" aria-labelledby="fixes">
+  <div class="copy">
+    <h2 id="fixes"><span class="badge" aria-hidden="true">🛠</span>Smaller fixes</h2>
+  </div>
+  <ul class="small">
+    <li><span class="emo" aria-hidden="true">🌙</span><span>Tabs look right in dark mode</span></li>
+    <li><span class="emo" aria-hidden="true">🔠</span><span>Large text fits on the sign-in error</span></li>
+    <li><span class="emo" aria-hidden="true">💬</span><span>Clearer Send Feedback wording</span></li>
+    <li><span class="emo" aria-hidden="true">⚙️</span><span>Want sounds that start on their own to play on silent too? Settings › Sound › Autoplay on silent.</span></li>
+  </ul>
+</section>
+
+<section class="card" id="test" aria-labelledby="how">
+  <div class="copy">
+    <h2 id="how"><span class="badge" aria-hidden="true">🧪</span>How to test</h2>
+    <p class="callout">Three quick things. About five minutes in total.</p>
+  </div>
+  <ol class="how">
+    <li class="step"><div class="art" aria-hidden="true"><span>🔕</span></div>
+      <div class="s-copy"><p class="eyebrow">Step 1</p><h3>Flip to silent, then tap</h3><p class="sub">Tap stickers in the app and in the Messages drawer. Each one should play.</p></div></li>
+    <li class="step"><div class="art" aria-hidden="true"><span>⏱️</span></div>
+      <div class="s-copy"><p class="eyebrow">Step 2</p><h3>Leave for a minute</h3><p class="sub">Switch to another app, come back and tap a sticker straight away.</p></div></li>
+    <li class="step"><div class="art" aria-hidden="true"><span>🎙️</span></div>
+      <div class="s-copy"><p class="eyebrow">Step 3</p><h3>Record, play, send</h3><p class="sub">Record a sound and play it right away, then send a new sticker from the drawer.</p></div></li>
+  </ol>
+</section>
+
+<section class="card row" aria-labelledby="fb">
+  <div class="copy">
+    <h2 id="fb"><span class="badge" aria-hidden="true">💬</span>Tell us what you find</h2>
+    <p class="callout">Anything odd, confusing or great: we want to hear it.</p>
+    <ul class="ways">
+      <li class="way"><span class="tile"><img src="assets/testers/envelope.svg" width="24" height="24" alt=""></span>
+        <div class="w-copy"><h3>In the app</h3><p class="sub">Settings › Send Feedback. Pick what it’s about and write a sentence or two.</p></div></li>
+      <li class="way"><span class="tile"><img src="assets/testers/camera.svg" width="24" height="24" alt=""></span>
+        <div class="w-copy"><h3>With a screenshot</h3><p class="sub">Take a screenshot, tap the thumbnail, then tap Share Beta Feedback.</p></div></li>
+    </ul>
+    <a class="btn secondary" href="testers.html">Full tester guide</a>
+  </div>
+  <div class="shot"><picture><source srcset="assets/whats-new/feedback-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/feedback-light.jpg" width="440" height="957" loading="lazy" alt="The Send Feedback screen: What's it about (Something's broken, Idea, Something else), a What happened field and an Include device info switch."></picture></div>
+</section>
+
+<footer>
+  <p class="foot">Thanks for testing! Questions? <a href="mailto:abdimohamed1717+soundstickers@gmail.com?subject=Sound%20Stickers%20build%204">abdimohamed1717+soundstickers@gmail.com</a></p>
+  <p class="foot"><a href="./">Sound Stickers</a> · <a href="testers.html">Tester guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></p>
+</footer>
+</main>
+</body>
+</html>
