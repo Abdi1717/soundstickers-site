@@ -54,8 +54,9 @@ h1{margin:0;font:700 34px/41px ui-rounded,"SF Pro Rounded",-apple-system,BlinkMa
 
 /* Jump chips */
 .chips{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.chips a{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;background:var(--card);
+.chips a{position:relative;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;background:var(--card);
   color:var(--text);text-decoration:none;font-size:15px;font-weight:600;letter-spacing:-.23px;border:1px solid var(--hairline)}
+.chips a::after{content:"";position:absolute;inset:-4px 0}
 
 /* Section headings */
 h2{margin:0;display:flex;align-items:center;gap:12px;font-size:22px;line-height:28px;font-weight:700;letter-spacing:-.26px}
@@ -116,7 +117,8 @@ ol.how{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap
 /* Earlier builds */
 .earlier{display:flex;flex-direction:column;gap:6px;padding-top:24px;border-top:1px solid var(--hairline)}
 
-footer{text-align:center;display:flex;flex-direction:column;gap:6px}
+footer{text-align:center;display:flex;flex-direction:column;gap:0}
+footer a{display:inline-block;padding:13px 0}
 footer a{overflow-wrap:anywhere}
 
 /* Desktop: 1200 frame */

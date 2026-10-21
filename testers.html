@@ -96,7 +96,8 @@ ul.limits li{display:flex;gap:8px;align-items:flex-start}
 .check{flex:none;width:24px;height:24px;border-radius:6px}
 @media (prefers-color-scheme:dark){.check{background:var(--accent-subtle)}}
 
-footer{text-align:center;display:flex;flex-direction:column;gap:6px}
+footer{text-align:center;display:flex;flex-direction:column;gap:0}
+footer a{display:inline-block;padding:13px 0}
 
 /* Desktop: 1200 frame */
 @media (min-width:760px){
@@ -111,8 +112,8 @@ footer{text-align:center;display:flex;flex-direction:column;gap:6px}
   h2{font-size:28px;line-height:34px;letter-spacing:.38px}
   .shot.lg{width:220px;height:478px}
   .shots{width:auto}
-  .shots li{flex:none;width:220px;max-width:none}
-  .shots .shot{border-radius:28px;aspect-ratio:auto;height:478px}
+  .shots li{flex:0 1 220px;min-width:0;max-width:none}
+  .shots .shot{border-radius:28px;aspect-ratio:220/478}
   .tries{flex-direction:row;flex-wrap:wrap}
   .try{flex-direction:column;width:188px}
   .try .shot{width:164px;height:357px;border-radius:28px}

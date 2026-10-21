@@ -50,10 +50,10 @@ img,video{display:block;max-width:100%;height:auto}
 .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--surface);padding:8px 12px;border-radius:8px;z-index:9}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
 
-header.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.brand{white-space:nowrap;display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);text-decoration:none}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{white-space:nowrap;display:flex;padding:4px 0;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);text-decoration:none}
 .brand img{width:36px;height:36px;border-radius:9px}
-header.top nav a{color:var(--ink-2);text-decoration:none;font-weight:600;font-size:15px;margin-left:18px}
+header.top nav a{color:var(--ink-2);text-decoration:none;font-weight:600;font-size:15px;margin-left:18px;display:inline-block;padding:12px 0}
 header.top nav a:hover{color:var(--accent)}
 
 .hero{display:grid;gap:36px;align-items:center;padding:28px 0 56px}
@@ -115,8 +115,9 @@ kbd{font:inherit;font-weight:700;background:var(--surface);border:1px solid var(
 .closing img{width:84px;height:84px;border-radius:20px;margin:0 auto 18px}
 .closing .cta{justify-content:center;margin-top:22px}
 
-footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:15px;color:var(--ink-2)}
-footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:10px}
+footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:15px;color:var(--ink-2)}
+footer nav{display:flex;flex-wrap:wrap;gap:0 20px;margin-bottom:4px}
+footer nav a{padding:11px 0}
 
 @media (min-width:760px){
   .hero{grid-template-columns:1.15fr .85fr;padding:48px 0 80px}
@@ -126,6 +127,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:10px}
   .find{grid-template-columns:repeat(4,1fr)}
   .privacy{grid-template-columns:1fr 1fr;align-items:center}
 }
+@media (min-width:760px) and (max-width:1100px){.chip.b{right:-4%}}
 @media (max-width:480px){header.top nav a:first-child{display:none}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
