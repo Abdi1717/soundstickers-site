@@ -7,6 +7,7 @@
 <meta name="description" content="Record or import a sound, give it emoji or photo art, add Splat or Echo, and send it from Messages. Free, no ads, no account needed. Your stickers stay on your iPhone.">
 <meta name="theme-color" content="#FAF6EF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<meta name="apple-itunes-app" content="app-id=6824408010">
 <link rel="canonical" href="https://abdi1717.github.io/soundstickers-site/">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -61,8 +62,11 @@ header.top nav a:hover{color:var(--accent)}
 .hero h1 span{color:var(--accent)}
 .lede{font-size:clamp(18px,2.4vw,21px);color:var(--ink-2);max-width:34ch;margin:0 0 26px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);border-radius:14px;padding:12px 18px;font-weight:700;font-size:16px}
-.badge svg{width:20px;height:20px;fill:currentColor}
+/* Apple's badge artwork, unmodified. Min. 40 px tall on screen; clear space ≥ ¼ of its height (Apple guidelines). */
+.store{display:inline-block;line-height:0;margin:0 14px 0 0;border-radius:9px}
+.store img{width:auto;height:54px}
+.imsg{font-size:15px;color:var(--ink-2);margin:16px 0 0;max-width:40ch}
+.imsg b{color:var(--ink)}
 .btn2{color:var(--accent);font-weight:700;text-decoration:none;padding:12px 6px}
 .btn2:hover{text-decoration:underline}
 .facts{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;gap:8px}
@@ -112,7 +116,7 @@ kbd{font:inherit;font-weight:700;background:var(--surface);border:1px solid var(
 .checks circle{fill:var(--coral)}
 
 .closing{text-align:center;padding:72px 0}
-.closing img{width:84px;height:84px;border-radius:20px;margin:0 auto 18px}
+.closing>img{width:84px;height:84px;border-radius:20px;margin:0 auto 18px}
 .closing .cta{justify-content:center;margin-top:22px}
 
 footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:15px;color:var(--ink-2)}
@@ -144,12 +148,12 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:10px}
     <h1 id="hero-title">Stickers you <span>can&nbsp;hear.</span></h1>
     <p class="lede">Record or import a sound, give it emoji or photo art, add Splat or Echo, and send it right from Messages. Friends hear it even if they don't have the app.</p>
     <div class="cta">
-      <!-- When the App Store link is live, replace this badge with: <a class="badge" href="APP_STORE_URL">Download on the App Store</a> -->
-      <span class="badge" role="note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.8 1.2 1.8 2.6 3.1 2.5 1.3-.1 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-1-2.4-4.2zM14 5.3c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>Coming soon to the App Store</span>
+      <a class="store" href="https://apps.apple.com/app/id6824408010"><img src="assets/app-store-badge.svg" width="162" height="54" alt="Download on the App Store"></a>
       <a class="btn2" href="#how">See how it works</a>
     </div>
+    <p class="imsg"><b>Includes an iMessage app.</b> After you install it, open any chat in Messages, tap +, then Sound Stickers. <a href="#find">Can't find it?</a></p>
     <ul class="facts" aria-label="At a glance">
-      <li>Free</li><li>iPhone · iOS 18+</li><li>No ads</li><li>No account needed</li><li>Stays on your iPhone</li>
+      <li>Free</li><li>iPhone · iOS 18+</li><li>iMessage app</li><li>No ads</li><li>No account needed</li><li>Stays on your iPhone</li>
     </ul>
   </div>
   <div class="stage">
@@ -181,7 +185,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:10px}
     </article>
     <article class="feature">
       <h3>Right in Messages</h3>
-      <p>Open any chat, tap +, then Sound Stickers. Your favorites, recents and packs are all there. Tap one to place it, then send.</p>
+      <p>Open any chat, tap +, then Sound Stickers. Your favorites, recents and packs are all there. Tap one to place it, then send. Taps play even when your iPhone is on silent.</p>
       <img class="shot" style="object-position:bottom" src="assets/shot-drawer.jpg" width="420" height="913" loading="lazy" alt="The Sound Stickers drawer open under a Messages chat, showing Favorites, Recents and Packs tabs and a grid of stickers.">
     </article>
     <article class="feature">
@@ -224,7 +228,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:10px}
 <section aria-labelledby="packs-title">
   <p class="eyebrow">Free starter packs</p>
   <h2 id="packs-title">24 sounds to start with</h2>
-  <p class="sub">Air horns, drumrolls, ba-dum-tss, slow claps, confetti pops and a tomato throw. Every bundled sound is original, made for the app.</p>
+  <p class="sub">Air horns, drumrolls, ba-dum-tss, slow claps, confetti pops and a tomato throw. More packs are free in the Store tab, including seasonal ones. Every bundled sound is original, made for the app.</p>
   <div class="packs">
     <div class="pack"><img src="assets/pack-starter-pack.png" width="56" height="56" alt=""><span>Starter Pack<small>8 sounds</small></span></div>
     <div class="pack"><img src="assets/pack-group-chat-chaos.png" width="56" height="56" alt=""><span>Group Chat Chaos<small>8 sounds</small></span></div>
@@ -253,8 +257,8 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:10px}
 <section class="closing" aria-labelledby="close-title">
   <img src="assets/icon-192.png" width="84" height="84" alt="">
   <h2 id="close-title">Stickers are silent.<br>Sound Stickers aren't.</h2>
-  <p class="sub" style="margin:0 auto">Free on iPhone, with iOS 18 or later.</p>
-  <div class="cta"><span class="badge" role="note">Coming soon to the App Store</span></div>
+  <p class="sub" style="margin:0 auto">Free on iPhone, with iOS 18 or later. No in&#8209;app purchases.</p>
+  <div class="cta"><a class="store" style="margin:0" href="https://apps.apple.com/app/id6824408010"><img src="assets/app-store-badge.svg" width="162" height="54" alt="Download on the App Store"></a></div>
 </section>
 </main>
 
@@ -262,7 +266,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:10px}
   <nav aria-label="Legal and help">
     <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="copyright.html">Copyright &amp; Acceptable Use</a><a href="support.html">Support</a><a href="testers.html">Beta testers</a>
   </nav>
-  <p style="margin:0">© 2026 Abdinajib Hussein Mohamed. iPhone and iMessage are trademarks of Apple Inc.</p>
+  <p style="margin:0">© 2026 Abdinajib Hussein Mohamed. Apple, the Apple logo, iPhone and iMessage are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.</p>
 </footer>
 </div>
 <script>
