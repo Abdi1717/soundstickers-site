@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Sound Stickers: what’s new in build 4</title>
-<meta name="description" content="What changed in Sound Stickers beta build 4, with screenshots, and three quick things to test.">
+<title>Sound Stickers: what’s new in build 8</title>
+<meta name="description" content="What changed in Sound Stickers beta build 8, with screenshots, and three quick things to test.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
@@ -12,8 +12,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="What’s new in Sound Stickers build 4">
-<meta property="og:description" content="Plays on silent, three fresh packs and a new empty Library. Three quick things to test.">
+<meta property="og:title" content="What’s new in Sound Stickers build 8">
+<meta property="og:description" content="5 free meme packs with 40 reaction sounds, punchier sounds and a new What’s New screen. Three quick things to test.">
 <meta property="og:url" content="https://abdi1717.github.io/soundstickers-site/whats-new.html">
 <meta property="og:image" content="https://abdi1717.github.io/soundstickers-site/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -113,6 +113,9 @@ ol.how{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap
 .btn.secondary{background:var(--accent-subtle);color:#B0260F}
 .btn:hover{filter:brightness(.95)}
 
+/* Earlier builds */
+.earlier{display:flex;flex-direction:column;gap:6px;padding-top:24px;border-top:1px solid var(--hairline)}
+
 footer{text-align:center;display:flex;flex-direction:column;gap:6px}
 footer a{overflow-wrap:anywhere}
 
@@ -145,16 +148,93 @@ footer a{overflow-wrap:anywhere}
 
 <header class="hero" aria-labelledby="title">
   <div class="art" aria-hidden="true"><span>🎉</span></div>
-  <p class="eyebrow">BETA · BUILD 4</p>
-  <h1 id="title">What’s new in build 4</h1>
-  <p class="lede">Sounds that play on silent, three fresh packs and a friendlier empty Library. Have a look, then try the three quick tests at the bottom.</p>
+  <p class="eyebrow">BETA · BUILD 8</p>
+  <h1 id="title">What’s new in build 8</h1>
+  <p class="lede">Five free meme packs, sounds that hit from the first instant and a new What’s New screen. Have a look, then try the three quick tests below.</p>
   <ul class="chips" aria-label="Jump to">
-    <li><a href="#silent">🔇 Plays on silent</a></li>
-    <li><a href="#fresh">🎃 3 new packs</a></li>
-    <li><a href="#empty">✨ New Library</a></li>
+    <li><a href="#memes">😂 5 meme packs</a></li>
+    <li><a href="#punch">🥁 Punchier sounds</a></li>
+    <li><a href="#whatsnew">🎁 What’s New</a></li>
     <li><a href="#test">🧪 How to test</a></li>
   </ul>
 </header>
+
+<ul class="features">
+  <li class="feature" id="memes">
+    <div class="stage lemon"><div class="sticker" aria-hidden="true"><span>😂</span></div>
+      <div class="phone"><picture><source srcset="assets/whats-new/b8-memes-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/b8-memes-light.jpg" width="440" height="956" loading="lazy" alt="The Store with a Meme Sounds row of free packs, Reaction Hits and Fail Mode, and a Top Free row below."></picture></div></div>
+    <div class="f-copy">
+      <span class="tag">Store</span>
+      <h3>5 free meme packs, 40 new sounds</h3>
+      <p class="sub">Reaction Hits, Fail Mode, Hype Mode, Suspense and Cartoon Chaos. Find them in Store › Meme Sounds.</p>
+    </div>
+  </li>
+  <li class="feature" id="punch">
+    <div class="stage violet"><div class="sticker" aria-hidden="true"><span>🥁</span></div>
+      <div class="phone lift"><picture><source srcset="assets/whats-new/b8-punch-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/b8-punch-light.jpg" width="440" height="956" loading="lazy" alt="The Reaction Hits pack: a grid of 8 stickers such as Pipe Clang, Wrong Buzzer, Correct! and Kaboom, each with its length, under the line All 8 stickers, tap one to hear it."></picture></div></div>
+    <div class="f-copy">
+      <span class="tag">Sound</span>
+      <h3>Punchier sounds</h3>
+      <p class="sub">Every sound now hits from the first instant, with no quiet lead-in before the good part.</p>
+    </div>
+  </li>
+  <li class="feature" id="whatsnew">
+    <div class="stage orange"><div class="sticker" aria-hidden="true"><span>🎁</span></div>
+      <div class="phone"><picture><source srcset="assets/whats-new/b8-whatsnew-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/b8-whatsnew-light.jpg" width="440" height="956" loading="lazy" alt="The What's New screen: a picture card, a short title and line of text, a Try it button, page dots and a Next button."></picture></div></div>
+    <div class="f-copy">
+      <span class="tag">App</span>
+      <h3>A What’s New screen</h3>
+      <p class="sub">After each update the app shows what changed. Swipe through, or tap Try it to jump straight there.</p>
+      <p class="fixed"><b>LATER</b><span>Open it again any time from Settings › About › What’s New.</span></p>
+    </div>
+  </li>
+  <li class="feature" id="se">
+    <div class="stage rose"><div class="sticker" aria-hidden="true"><span>📱</span></div>
+      <div class="phone"><img src="assets/whats-new/b8-se-light.jpg" width="440" height="782" loading="lazy" alt="The first onboarding screen on an iPhone SE: an air horn sticker, the title Stickers you can hear and a Get started button, all on one screen."></div></div>
+    <div class="f-copy">
+      <span class="tag">Onboarding</span>
+      <h3>Fits small iPhones</h3>
+      <p class="sub">Onboarding now fits on smaller screens like the iPhone SE, with the button always in reach.</p>
+    </div>
+  </li>
+</ul>
+
+<section class="card" id="test" aria-labelledby="how">
+  <div class="copy">
+    <h2 id="how"><span class="badge" aria-hidden="true">🧪</span>How to test build 8</h2>
+    <p class="callout">Three quick things. About five minutes in total.</p>
+  </div>
+  <ol class="how">
+    <li class="step"><div class="art" aria-hidden="true"><span>😂</span></div>
+      <div class="s-copy"><p class="eyebrow">Step 1</p><h3>Get a meme pack</h3><p class="sub">Store › Meme Sounds: get a pack, tap its stickers, then send one from Messages.</p></div></li>
+    <li class="step"><div class="art" aria-hidden="true"><span>🥁</span></div>
+      <div class="s-copy"><p class="eyebrow">Step 2</p><h3>Listen for the punch</h3><p class="sub">Tap Bonk, Rimshot and Confetti Pop. Each should hit the moment you tap.</p></div></li>
+    <li class="step"><div class="art" aria-hidden="true"><span>🎁</span></div>
+      <div class="s-copy"><p class="eyebrow">Step 3</p><h3>Swipe through What’s New</h3><p class="sub">Open the app after updating and swipe through the cards. Then find it again in Settings › About.</p></div></li>
+  </ol>
+</section>
+
+
+<section class="card row" aria-labelledby="fb">
+  <div class="copy">
+    <h2 id="fb"><span class="badge" aria-hidden="true">💬</span>Tell us what you find</h2>
+    <p class="callout">Anything odd, confusing or great: we want to hear it.</p>
+    <ul class="ways">
+      <li class="way"><span class="tile"><img src="assets/testers/envelope.svg" width="24" height="24" alt=""></span>
+        <div class="w-copy"><h3>In the app</h3><p class="sub">Settings › Send Feedback. Pick what it’s about and write a sentence or two.</p></div></li>
+      <li class="way"><span class="tile"><img src="assets/testers/camera.svg" width="24" height="24" alt=""></span>
+        <div class="w-copy"><h3>With a screenshot</h3><p class="sub">Take a screenshot, tap the thumbnail, then tap Share Beta Feedback.</p></div></li>
+    </ul>
+    <a class="btn secondary" href="testers.html">Full tester guide</a>
+  </div>
+  <div class="shot"><picture><source srcset="assets/whats-new/feedback-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/feedback-light.jpg" width="440" height="957" loading="lazy" alt="The Send Feedback screen: What's it about (Something's broken, Idea, Something else), a What happened field and an Include device info switch."></picture></div>
+</section>
+
+<section class="earlier" aria-labelledby="earlier">
+  <p class="eyebrow">BETA · BUILD 4</p>
+  <h2 id="earlier">Earlier: build 4</h2>
+  <p class="callout">Still worth a look if you skipped it.</p>
+</section>
 
 <ul class="features">
   <li class="feature" id="silent">
@@ -208,9 +288,9 @@ footer a{overflow-wrap:anywhere}
   </ul>
 </section>
 
-<section class="card" id="test" aria-labelledby="how">
+<section class="card" id="test-b4" aria-labelledby="how-b4">
   <div class="copy">
-    <h2 id="how"><span class="badge" aria-hidden="true">🧪</span>How to test</h2>
+    <h2 id="how-b4"><span class="badge" aria-hidden="true">🧪</span>How to test build 4</h2>
     <p class="callout">Three quick things. About five minutes in total.</p>
   </div>
   <ol class="how">
@@ -223,23 +303,10 @@ footer a{overflow-wrap:anywhere}
   </ol>
 </section>
 
-<section class="card row" aria-labelledby="fb">
-  <div class="copy">
-    <h2 id="fb"><span class="badge" aria-hidden="true">💬</span>Tell us what you find</h2>
-    <p class="callout">Anything odd, confusing or great: we want to hear it.</p>
-    <ul class="ways">
-      <li class="way"><span class="tile"><img src="assets/testers/envelope.svg" width="24" height="24" alt=""></span>
-        <div class="w-copy"><h3>In the app</h3><p class="sub">Settings › Send Feedback. Pick what it’s about and write a sentence or two.</p></div></li>
-      <li class="way"><span class="tile"><img src="assets/testers/camera.svg" width="24" height="24" alt=""></span>
-        <div class="w-copy"><h3>With a screenshot</h3><p class="sub">Take a screenshot, tap the thumbnail, then tap Share Beta Feedback.</p></div></li>
-    </ul>
-    <a class="btn secondary" href="testers.html">Full tester guide</a>
-  </div>
-  <div class="shot"><picture><source srcset="assets/whats-new/feedback-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/whats-new/feedback-light.jpg" width="440" height="957" loading="lazy" alt="The Send Feedback screen: What's it about (Something's broken, Idea, Something else), a What happened field and an Include device info switch."></picture></div>
-</section>
+
 
 <footer>
-  <p class="foot">Thanks for testing! Questions? <a href="mailto:abdimohamed1717+soundstickers@gmail.com?subject=Sound%20Stickers%20build%204">abdimohamed1717+soundstickers@gmail.com</a></p>
+  <p class="foot">Thanks for testing! Questions? <a href="mailto:abdimohamed1717+soundstickers@gmail.com?subject=Sound%20Stickers%20build%208">abdimohamed1717+soundstickers@gmail.com</a></p>
   <p class="foot"><a href="./">Sound Stickers</a> · <a href="testers.html">Tester guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></p>
 </footer>
 </main>
